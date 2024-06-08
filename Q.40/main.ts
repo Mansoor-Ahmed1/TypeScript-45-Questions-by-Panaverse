@@ -8,12 +8,23 @@ If the calling line includes a value for the number of tracks, add that value to
 Make at least one new function call that includes the number of tracks on an album.
 */
 
-function make_album(name:string, title:string){
-    let artist = {
+function make_album(name: string, title: string, tracks?: number) {
+    let album: { author_name: string, album_title: string, tracks?: number } = {
         author_name: name,
-        album_title: title,
+        album_title: title
+    };
+    if (tracks !== undefined) {
+        album.tracks = tracks;
     }
-    return 
-    artist.author_name
-    artist.album_title
+    return album;
 }
+
+// Creating three album objects
+let album1 = make_album("Aleem", "Junoon");
+let album2 = make_album("Rohail", "22nd nightss");
+let album3 = make_album("Taha", "Taha's songs", 10);
+
+// Printing the album objects to show they are storing the information correctly
+console.log(album1);
+console.log(album2);
+console.log(album3);
